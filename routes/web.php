@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/teste', function () {
-    return "<h1>Olá mundo!</h1>";
+Route::get('/teste/{nome}', function ($nome){
+    return "<h1>Ola ".$nome."!</h1>";
+});
+
+Route::get('/soma/{n1}/{n2}', function ($n1, $n2){
+    return "<h1>A soma é: ".$n1+$n2."!</h1>";
 });
