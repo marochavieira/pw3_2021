@@ -30,4 +30,8 @@ Route::get('layout', function (){
 });
 
 //Route::get('genres', [\App\Http\Controllers\GenreController::class, 'index']);
-Route::resource('genres', \App\Http\Controllers\GenreController::class);
+Route::prefix('admin')->group(function (){
+    Route::resource('genres', \App\Http\Controllers\GenreController::class);
+    Route::resource('directors', \App\Http\Controllers\DirectorController::class);
+    Route::resource('languages', \App\Http\Controllers\LanguageController::class);
+});
